@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+class Solution {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+        int length = scn.nextInt();
+        ArrayList<Integer>[] lista = new ArrayList[length + 1];
+        int a = 1;
+        while (a <= length) {
+            lista[a] = new ArrayList<>();
+            lista[a].add(scn.nextInt()) ;
+            for (int j = 1; j < lista[a].get(0) + 1 ; ++j) {
+                lista[a].add(scn.nextInt());
+            }
+            ++a;
+        }
+        int queries = scn.nextInt();
+        while (queries > 0) {
+            int x = scn.nextInt();
+            int z = scn.nextInt();
+            if (z <= lista[x].get(0)) {
+                System.out.println(lista[x].get(z));
+            } else if (z > lista[x].get(0) || lista[x] == null){
+                 System.out.println("ERROR!");
+            }
+            --queries;
+        }
+    }
+}
